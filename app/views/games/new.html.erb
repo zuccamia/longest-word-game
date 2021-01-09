@@ -1,18 +1,21 @@
 <div class="container">
-    <div class="row center">
-        <h1>How long can you go? 😄</h1>
+    <div class="row justify-content-center mt-5">
+        <h3>How long can you go? 😄</h3>
     </div>
-    <div class="row center">
-        <h3 class="inline">
-            <% @letters.each do |letter| %>
-            <%= letter %>
-            <% end %>
-        </h3>
+    <div class="d-inline-flex justify-content-center ml-5 mt-3">
+        <% @letters.each do |letter| %>
+        <p class="btn btn-primary"><%= letter %></p>
+        <% end %>
     </div>
-    <div class="row center">
-        <form method="POST" action="/score">
-        <input type="text" name="word" class="rounded" placeholder="Type your word...">
-        <input type="submit" class="btn" value="Submit">
+    <div class="row justify-content-center">
+        <form method="post" action="/score" class="form-inline">
+        <input type="text" name="word" class="form-control" placeholder="Type your word...">
+        <input type="hidden" name="grid" value="<%= @letters %>" />
+        <input type="hidden" name="start_time" value="<%= @start_time %>" />
+        <input type="submit" class="btn btn-warning" value="Submit">
         </form>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <%= link_to 'Replay', welcome_path %>
     </div>
 </div> 
