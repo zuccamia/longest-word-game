@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row center">
+        <h1>How long can you go? 😄</h1>
+    </div>
+    <div class="row center">
+        <h3 class="inline">
+            <% @letters.each do |letter| %>
+            <%= letter %>
+            <% end %>
+        </h3>
+    </div>
+    <div class="row center">
+        <form method="POST" action="/score">
+        <input type="text" name="word" class="rounded" placeholder="Type your word...">
+        <input type="submit" class="btn" value="Submit">
+        </form>
+    </div>
+</div> 
